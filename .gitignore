@@ -1,5 +1,10 @@
 # Compiled class file
 *.class
+.idea
+mvnw
+mvnw.cmd
+HELP.md
+pom.xml
 
 # Log file
 *.log
