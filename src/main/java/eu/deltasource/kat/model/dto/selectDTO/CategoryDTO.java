@@ -1,6 +1,7 @@
-package eu.deltasource.kat.model.dto;
+package eu.deltasource.kat.model.dto.selectDTO;
 
 import eu.deltasource.kat.enums.CategoryVehicle;
+import eu.deltasource.kat.model.dto.DrivingLicenseIdDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,5 +11,5 @@ public class CategoryDTO {
 
     private CategoryVehicle category;
 
-    private DrivingLicenseDTO drivingLicense;
+    private DrivingLicenseIdDTO drivingLicenseId;
 }

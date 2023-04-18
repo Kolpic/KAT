@@ -15,7 +15,6 @@ public class Category {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column
     private CategoryVehicle category;
 
     @ManyToOne

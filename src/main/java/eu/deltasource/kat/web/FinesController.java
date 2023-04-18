@@ -1,7 +1,6 @@
 package eu.deltasource.kat.web;
 
-import eu.deltasource.kat.model.entity.Fine;
-import eu.deltasource.kat.repository.FineRepository;
+import eu.deltasource.kat.model.dto.selectDTO.FineDTO;
 import eu.deltasource.kat.service.FineService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,7 @@ public class FinesController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Fine>> getAllFines() {
+    public ResponseEntity<List<FineDTO>> getAllFines() {
         return ResponseEntity.ok(fineService.getAllFines());
     }
 }

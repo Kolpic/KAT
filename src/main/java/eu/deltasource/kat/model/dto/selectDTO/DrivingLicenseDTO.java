@@ -1,6 +1,7 @@
-package eu.deltasource.kat.model.dto;
+package eu.deltasource.kat.model.dto.selectDTO;
 
 import eu.deltasource.kat.enums.Sex;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 

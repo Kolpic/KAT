@@ -1,7 +1,6 @@
 package eu.deltasource.kat.web;
 
-import eu.deltasource.kat.model.entity.Category;
-import eu.deltasource.kat.repository.CategoryRepository;
+import eu.deltasource.kat.model.dto.selectDTO.CategoryDTO;
 import eu.deltasource.kat.service.CategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,7 @@ public class CategoryController {
     }
 
     @GetMapping
-    private ResponseEntity<List<Category>> getAllCategories() {
+    private ResponseEntity<List<CategoryDTO>> getAllCategories() {
         return ResponseEntity.ok(categoryService.getAllCategories());
     }
 }

@@ -18,9 +18,9 @@ public class Person {
     @Column(name = "personal_identifier", unique = true)
     private int personalIdentifier;
 
-    @Column
     @ElementCollection
-    private Set<Integer> numbers;
+    @Column(name = "numbers")
+    private Set<Integer> phoneNumbers;
 
     @OneToOne
     private DrivingLicense drivingLicense;

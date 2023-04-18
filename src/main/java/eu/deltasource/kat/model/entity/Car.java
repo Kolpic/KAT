@@ -17,10 +17,8 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
     private String brand;
 
-    @Column
     private String model;
 
     @Column(name = "local_insurance")
@@ -35,7 +33,6 @@ public class Car {
     @Column(name = "year_made")
     private Date yearMade;
 
-    @Column
     private String color;
 
     @Column(name = "vin_number", unique = true)

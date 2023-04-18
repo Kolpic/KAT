@@ -1,6 +1,5 @@
 package eu.deltasource.kat.configuration;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -9,9 +8,12 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * Configuration for swagger bean
+ */
 @Configuration
 @EnableSwagger2
-public class BeanConfiguration {
+public class SwaggerConfiguration {
 
     /**
      After defining the Docket bean, its select() method returns an instance of ApiSelectorBuilder,
@@ -27,10 +29,5 @@ public class BeanConfiguration {
                 .apis(RequestHandlerSelectors.basePackage("eu.deltasource.kat"))
                 .paths(PathSelectors.any())
                 .build();
-    }
-
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
     }
 }

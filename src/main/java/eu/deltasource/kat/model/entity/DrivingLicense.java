@@ -7,7 +7,9 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Getter
-@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "driving_license")
 public class DrivingLicense {
@@ -31,10 +33,8 @@ public class DrivingLicense {
     @Column(name = "date_of_expiry")
     private Date dateOfExpiry;
 
-    @Column
     private String city;
 
     @Enumerated(EnumType.STRING)
-    @Column
     private Sex sex;
 }

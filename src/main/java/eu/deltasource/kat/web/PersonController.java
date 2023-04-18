@@ -1,7 +1,6 @@
 package eu.deltasource.kat.web;
 
-import eu.deltasource.kat.model.entity.Person;
-import eu.deltasource.kat.repository.PersonRepository;
+import eu.deltasource.kat.model.dto.selectDTO.PersonDTO;
 import eu.deltasource.kat.service.PersonService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,7 @@ public class PersonController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Person>> getAllPersons() {
+    public ResponseEntity<List<PersonDTO>> getAllPersons() {
         return ResponseEntity.ok(personService.getAllPersons());
     }
 
