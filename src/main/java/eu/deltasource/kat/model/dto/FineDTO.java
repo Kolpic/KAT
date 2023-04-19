@@ -1,4 +1,4 @@
-package eu.deltasource.kat.model.dto.selectDTO;
+package eu.deltasource.kat.model.dto;
 
 import eu.deltasource.kat.model.dto.PersonPersonIdentifierDTO;
 import lombok.Getter;

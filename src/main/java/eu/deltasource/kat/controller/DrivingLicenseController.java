@@ -1,6 +1,6 @@
-package eu.deltasource.kat.web;
+package eu.deltasource.kat.controller;
 
-import eu.deltasource.kat.model.dto.selectDTO.DrivingLicenseDTO;
+import eu.deltasource.kat.model.dto.DrivingLicenseDTO;
 import eu.deltasource.kat.service.DrivingLicenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

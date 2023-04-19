@@ -1,6 +1,6 @@
-package eu.deltasource.kat.web;
+package eu.deltasource.kat.controller;
 
-import eu.deltasource.kat.model.dto.selectDTO.FineDTO;
+import eu.deltasource.kat.model.dto.FineDTO;
 import eu.deltasource.kat.service.FineService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

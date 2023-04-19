@@ -1,6 +1,6 @@
 package eu.deltasource.kat.service;
 
-import eu.deltasource.kat.model.dto.selectDTO.CategoryDTO;
+import eu.deltasource.kat.model.dto.CategoryDTO;
 import eu.deltasource.kat.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@RequiredArgsConstructor(onConstructor_= @Autowired)
+@RequiredArgsConstructor
 @Service
 public class CategoryService {
 

@@ -1,6 +1,6 @@
-package eu.deltasource.kat.web;
+package eu.deltasource.kat.controller;
 
-import eu.deltasource.kat.model.dto.selectDTO.CarDTO;
+import eu.deltasource.kat.model.dto.CarDTO;
 import eu.deltasource.kat.model.entity.Car;
 import eu.deltasource.kat.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;

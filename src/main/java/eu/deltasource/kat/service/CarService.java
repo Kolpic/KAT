@@ -1,6 +1,6 @@
 package eu.deltasource.kat.service;
 
-import eu.deltasource.kat.model.dto.selectDTO.CarDTO;
+import eu.deltasource.kat.model.dto.CarDTO;
 import eu.deltasource.kat.model.entity.Car;
 import eu.deltasource.kat.model.entity.Person;
 import eu.deltasource.kat.repository.CarRepository;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-@RequiredArgsConstructor(onConstructor_= @Autowired)
+@RequiredArgsConstructor
 @Service
 public class CarService {
 

@@ -1,4 +1,4 @@
-package eu.deltasource.kat.model.dto.selectDTO;
+package eu.deltasource.kat.model.dto;
 
 import eu.deltasource.kat.model.dto.DrivingLicenseIdDTO;
 import lombok.Getter;
