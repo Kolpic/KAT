@@ -1,7 +1,5 @@
 package eu.deltasource.kat.model.dto;
 
-import eu.deltasource.kat.model.dto.PersonPersonIdentifierDTO;
-import eu.deltasource.kat.model.entity.Person;
 import lombok.Getter;
 import lombok.Setter;
 

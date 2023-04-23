@@ -42,7 +42,6 @@ public class CarController {
     @GetMapping("/{id}")
     public ResponseEntity<CarDTO> getCarById(@PathVariable long id) {
         Optional<CarDTO> currentCar = carService.getCarById(id);
-
         return currentCar
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -58,13 +57,11 @@ public class CarController {
      */
     @PostMapping()
     public ResponseEntity<Car> createCar(@RequestBody CarDTO newCar) {
-
         Car savedCar = carService.createNewCar(newCar);
-
         if (savedCar == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity<>(savedCar, HttpStatus.CREATED);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         }
 
     }
@@ -81,7 +78,6 @@ public class CarController {
     @DeleteMapping("/{id}")
     public ResponseEntity<CarDTO> deleteCarById(@PathVariable long id) {
         Optional<CarDTO> optionalCar = carService.getCarById(id);
-
         if (optionalCar.isPresent()) {
             carService.deleteById(id);
         }

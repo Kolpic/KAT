@@ -11,10 +11,10 @@ public class KatApplication {
         ConfigurableApplicationContext applicationContext =
                 SpringApplication.run(KatApplication.class, args);
 
-        for (String bean : applicationContext.getBeanDefinitionNames()) {
-            System.out.println("----------------");
-            System.out.println(bean);
-        }
+//        for (String bean : applicationContext.getBeanDefinitionNames()) {
+//            System.out.println("----------------");
+//            System.out.println(bean);
+//        }
     }
 
 }

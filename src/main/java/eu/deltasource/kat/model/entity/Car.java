@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Getter
-@Builder
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -40,49 +40,4 @@ public class Car {
 
     @ManyToOne
     private Person person;
-
-    public Car setBrand(String brand) {
-        this.brand = brand;
-        return this;
-    }
-
-    public Car setModel(String model) {
-        this.model = model;
-        return this;
-    }
-
-    public Car setLocalInsurance(boolean localInsurance) {
-        this.localInsurance = localInsurance;
-        return this;
-    }
-
-    public Car setAbroadInsurance(boolean abroadInsurance) {
-        this.abroadInsurance = abroadInsurance;
-        return this;
-    }
-
-    public Car setPlateNumber(String plateNumber) {
-        this.plateNumber = plateNumber;
-        return this;
-    }
-
-    public Car setYearMade(Date yearMade) {
-        this.yearMade = yearMade;
-        return this;
-    }
-
-    public Car setColor(String color) {
-        this.color = color;
-        return this;
-    }
-
-    public Car setVinNumber(String vinNumber) {
-        this.vinNumber = vinNumber;
-        return this;
-    }
-
-    public Car setPerson(Person person) {
-        this.person = person;
-        return this;
-    }
 }
