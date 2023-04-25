@@ -18,10 +18,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @DependsOn("modelMapper")
-public class ModelMapperSetUp {
+public class ModelMapperCustomImpl {
 
     private final ModelMapperConfiguration modelMapperConfiguration;
-    private final PersonRepository personRepository;
+    private final PersonRepository personRepository; // service
 
     TypeMap<Car, CarDTO> propertyMap;
 
@@ -31,7 +31,7 @@ public class ModelMapperSetUp {
      * andConverter methods, otherwise our ModelMapper won't know about
      * the additional mappings that we made.
      */
-    public ModelMapperSetUp(ModelMapperConfiguration modelMapperConfiguration, PersonRepository personRepository) {
+    public ModelMapperCustomImpl(ModelMapperConfiguration modelMapperConfiguration, PersonRepository personRepository) {
         this.modelMapperConfiguration = modelMapperConfiguration;
         this.personRepository = personRepository;
         this.modelMapperConfiguration.modelMapper().addMappings(carToCarDTOPropertyMap);
