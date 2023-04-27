@@ -11,6 +11,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 
+/**
+ * We need to implement a custom mapping if we want to use PostgreSQL’s JSONB type
+ * with Hibernate 4 or 5. The best way to do that is to implement Hibernate’s UserType
+ * interface and register the mapping in a custom dialect.
+ * Hibernate 6 provides a standard JSON mapping. We only need to activate it by annotating
+ * our entity attribute with a @JdbcTypeCode annotation and setting the type to SqlTypes.JSON.
+ */
 public class JsonParserConfiguration implements UserType {
     @Override
     public int[] sqlTypes() {
