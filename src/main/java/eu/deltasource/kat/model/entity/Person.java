@@ -1,7 +1,10 @@
 package eu.deltasource.kat.model.entity;
 
+import eu.deltasource.kat.configuration.JsonParserConfiguration;
 import eu.deltasource.kat.model.entity.DrivingLicense;
 import lombok.*;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -18,9 +21,9 @@ public class Person {
     @Column(name = "personal_identifier", unique = true)
     private int personalIdentifier;
 
-    @ElementCollection
     @Column(name = "numbers")
-    private Set<Integer> phoneNumbers;
+    @Type(type = "JsonParserConfiguration")
+    private JsonParserConfiguration phoneNumbers;
 
     @OneToOne
     private DrivingLicense drivingLicense;
