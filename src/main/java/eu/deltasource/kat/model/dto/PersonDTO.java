@@ -14,5 +14,5 @@ public class PersonDTO {
 
     private Set<Integer> numbers;
 
-    private DrivingLicenseIdDTO drivingLicenseId;
+    private DrivingLicenseDTO drivingLicense;
 }

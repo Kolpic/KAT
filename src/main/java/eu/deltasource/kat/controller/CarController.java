@@ -3,6 +3,7 @@ package eu.deltasource.kat.controller;
 import eu.deltasource.kat.model.dto.CarDTO;
 import eu.deltasource.kat.model.entity.Car;
 import eu.deltasource.kat.service.CarService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,16 +12,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/cars")
 public class CarController {
 
     private final CarService carService;
-
-    @Autowired
-    public CarController(CarService carService) {
-        this.carService = carService;
-    }
 
     /**
      * Getting all cars from carService with getAllCars method

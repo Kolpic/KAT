@@ -1,5 +1,6 @@
 package eu.deltasource.kat.model.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,5 +26,5 @@ public class CarDTO {
 
     private String vinNumber;
 
-    private PersonPersonIdentifierDTO personPersonIdentifier;
+    private int personalIdentifier;
 }

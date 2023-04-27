@@ -20,18 +20,18 @@ public class DrivingLicenseController {
         this.drivingLicenseService = drivingLicenseService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<DrivingLicenseDTO>> getAllDrivingLicenses() {
-        return ResponseEntity.ok(drivingLicenseService.getAllDrivingLicenses());
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<DrivingLicenseDTO> getDrivingLicenseById(@PathVariable long id) {
-        Optional<DrivingLicenseDTO> optionalDrivingLicense =
-                drivingLicenseService.getDrivingLicenseById(id);
-
-        return optionalDrivingLicense
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
+//    @GetMapping
+//    public ResponseEntity<List<DrivingLicenseDTO>> getAllDrivingLicenses() {
+//        return ResponseEntity.ok(drivingLicenseService.getAllDrivingLicenses());
+//    }
+//
+//    @GetMapping("/{id}")
+//    public ResponseEntity<DrivingLicenseDTO> getDrivingLicenseById(@PathVariable long id) {
+//        Optional<DrivingLicenseDTO> optionalDrivingLicense =
+//                drivingLicenseService.getDrivingLicenseById(id);
+//
+//        return optionalDrivingLicense
+//                .map(ResponseEntity::ok)
+//                .orElseGet(() -> ResponseEntity.notFound().build());
+//    }
 }

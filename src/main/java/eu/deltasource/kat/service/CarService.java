@@ -1,6 +1,6 @@
 package eu.deltasource.kat.service;
 
-import eu.deltasource.kat.configuration.ModelMapperConfiguration;
+import eu.deltasource.kat.mapstruct.CarMapper;
 import eu.deltasource.kat.model.dto.CarDTO;
 import eu.deltasource.kat.model.entity.Car;
 import eu.deltasource.kat.repository.CarRepository;
@@ -9,13 +9,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
 public class CarService {
 
     private final CarRepository carRepository;
-    private final ModelMapperConfiguration modelMapper;
+    private final CarMapper carMapper;
 
     /**
      * Getting from the repository all cars, then takes every car
@@ -26,7 +27,7 @@ public class CarService {
         return carRepository
                 .findAll()
                 .stream()
-                .map(car -> modelMapper.modelMapper().map(car, CarDTO.class))
+                .map(carMapper::carToCarDTO)
                 .toList();
     }
 
@@ -39,7 +40,7 @@ public class CarService {
     public Optional<CarDTO> getCarById(Long id) {
         return carRepository
                 .findById(id)
-                .map(car ->  modelMapper.modelMapper().map(car, CarDTO.class));
+                .map(carMapper::carToCarDTO);
     }
 
     /**
@@ -49,7 +50,7 @@ public class CarService {
      * @return the new created new object
      */
     public Car createNewCar(CarDTO newCar) {
-        Car newCarEntity = modelMapper.modelMapper().map(newCar, Car.class);
+        Car newCarEntity = carMapper.carDTOToCar(newCar);
         return carRepository.saveAndFlush(newCarEntity);
     }
 

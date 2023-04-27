@@ -19,8 +19,8 @@ public class FinesController {
         this.fineService = fineService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<FineDTO>> getAllFines() {
-        return ResponseEntity.ok(fineService.getAllFines());
-    }
+//    @GetMapping
+//    public ResponseEntity<List<FineDTO>> getAllFines() {
+//        return ResponseEntity.ok(fineService.getAllFines());
+//    }
 }

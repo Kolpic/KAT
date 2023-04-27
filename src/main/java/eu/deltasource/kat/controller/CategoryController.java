@@ -19,8 +19,8 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    @GetMapping
-    private ResponseEntity<List<CategoryDTO>> getAllCategories() {
-        return ResponseEntity.ok(categoryService.getAllCategories());
-    }
+//    @GetMapping
+//    private ResponseEntity<List<CategoryDTO>> getAllCategories() {
+//        return ResponseEntity.ok(categoryService.getAllCategories());
+//    }
 }

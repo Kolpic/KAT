@@ -19,9 +19,9 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<PersonDTO>> getAllPersons() {
-        return ResponseEntity.ok(personService.getAllPersons());
-    }
+//    @GetMapping
+//    public ResponseEntity<List<PersonDTO>> getAllPersons() {
+//        return ResponseEntity.ok(personService.getAllPersons());
+//    }
 
 }

@@ -8,8 +8,7 @@ pom.xml
 target
 target/classes
 LICENSE
-.gitignore
-.DS_STORE
+DS_STORE
 
 # Log file
 *.log

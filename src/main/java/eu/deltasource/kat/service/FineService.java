@@ -3,8 +3,6 @@ package eu.deltasource.kat.service;
 import eu.deltasource.kat.model.dto.FineDTO;
 import eu.deltasource.kat.repository.FineRepository;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,15 +11,6 @@ import java.util.List;
 @Service
 public class FineService {
 
-    private final FineRepository fineRepository;
-    private final ModelMapper modelMapper;
-
-    public List<FineDTO> getAllFines() {
-        return fineRepository
-                .findAll()
-                .stream()
-                .map(fine -> modelMapper.map(fine, FineDTO.class))
-                .toList();
-    }
+//    private final FineRepository fineRepository;
 
 }
