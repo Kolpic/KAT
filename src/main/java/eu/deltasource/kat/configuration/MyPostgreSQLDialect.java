@@ -1,5 +1,7 @@
 package eu.deltasource.kat.configuration;
 
+import org.hibernate.dialect.PostgreSQL94Dialect;
+
 import java.sql.Types;
 
 /**
@@ -8,9 +10,11 @@ import java.sql.Types;
  * registerColumnType method in its constructor. We use a PostgreSQL database
  * and we are extending Hibernate’s PostgreSQL94Dialect
  */
-public class PostgreSQL94Dialect extends org.hibernate.dialect.PostgreSQL94Dialect {
+public class MyPostgreSQLDialect extends PostgreSQL94Dialect {
 
-    public PostgreSQL94Dialect() {
-        this.registerColumnType(Types.OTHER, "jsonb");
+    public MyPostgreSQLDialect() {
+        super();
+        this.registerColumnType(Types.JAVA_OBJECT, "json");
+//        this.registerHibernateType(Types.OTHER, "jsonb");
     }
 }

@@ -4,6 +4,7 @@ import eu.deltasource.kat.configuration.JsonParserConfiguration;
 import eu.deltasource.kat.model.entity.DrivingLicense;
 import lombok.*;
 import org.hibernate.annotations.Type;
+import springfox.documentation.spring.web.json.Json;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -22,8 +23,8 @@ public class Person {
     private int personalIdentifier;
 
     @Column(name = "numbers")
-    @Type(type = "JsonParserConfiguration")
-    private JsonParserConfiguration phoneNumbers;
+    @Type(type = "JsonParserConfigurationObject")
+    private String phoneNumbers;
 
     @OneToOne
     private DrivingLicense drivingLicense;
