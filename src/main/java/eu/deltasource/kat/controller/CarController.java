@@ -55,12 +55,7 @@ public class CarController {
     @PostMapping()
     public ResponseEntity<Car> createCar(@RequestBody CarDTO newCar) {
         Car savedCar = carService.createNewCar(newCar);
-        if (savedCar == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(HttpStatus.CREATED);
-        }
-
+        return new ResponseEntity<>(savedCar, HttpStatus.CREATED);
     }
 
     /**

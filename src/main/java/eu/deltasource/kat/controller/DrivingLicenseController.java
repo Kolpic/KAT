@@ -51,9 +51,9 @@ public class DrivingLicenseController {
      * @param newDrivingLicense the new driving license, given from the user
      */
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void createNewDrivingLicense(@RequestBody DrivingLicenseDTO newDrivingLicense) {
-        drivingLicenseService.createNewDrivingLicense(newDrivingLicense);
+    public ResponseEntity<DrivingLicense> createNewDrivingLicense(@RequestBody DrivingLicenseDTO newDrivingLicense) {
+        DrivingLicense createdDrivingLicense = drivingLicenseService.createNewDrivingLicense(newDrivingLicense);
+        return new ResponseEntity<>(createdDrivingLicense, HttpStatus.CREATED);
     }
 
     /**

@@ -48,8 +48,8 @@ public class DrivingLicenseService {
      * the object, that is given by the user(dto) to driving license entity.
      * @param newDrivingLicense the given for creation object by the user
      */
-    public void createNewDrivingLicense(DrivingLicenseDTO newDrivingLicense) {
-        drivingLicenseRepository.save(drivingLicenseMapper.drivingLicenseDTOToDrivingLicense(newDrivingLicense));
+    public DrivingLicense createNewDrivingLicense(DrivingLicenseDTO newDrivingLicense) {
+        return drivingLicenseRepository.save(drivingLicenseMapper.drivingLicenseDTOToDrivingLicense(newDrivingLicense));
     }
 
     /**

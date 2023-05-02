@@ -3,7 +3,9 @@ package eu.deltasource.kat.service;
 import eu.deltasource.kat.mapstruct.CarMapper;
 import eu.deltasource.kat.model.dto.CarDTO;
 import eu.deltasource.kat.model.entity.Car;
+import eu.deltasource.kat.model.entity.Person;
 import eu.deltasource.kat.repository.CarRepository;
+import eu.deltasource.kat.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,7 @@ import java.util.Optional;
 public class CarService {
 
     private final CarRepository carRepository;
+    private final PersonRepository personRepository;
     private final CarMapper carMapper;
 
     /**
@@ -49,7 +52,9 @@ public class CarService {
      * @return the new created new object
      */
     public Car createNewCar(CarDTO newCar) {
-        Car newCarEntity = carMapper.carDTOToCar(newCar);
+        int personalIdentifier = newCar.getPersonalIdentifier();
+        Person foundPersonByPI = personRepository.findPersonByPersonalIdentifier(personalIdentifier);
+        Car newCarEntity = carMapper.carWithPersonDTOToCar(newCar, foundPersonByPI);
         return carRepository.saveAndFlush(newCarEntity);
     }
 
