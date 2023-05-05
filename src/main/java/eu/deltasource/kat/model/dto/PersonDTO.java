@@ -17,5 +17,5 @@ public class PersonDTO {
     @Type(type = "JsonParserConfigurationObject")
     private String phoneNumbers;
 
-    private DrivingLicenseDTO drivingLicense;
+    private long drivingLicenseId;
 }

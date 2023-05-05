@@ -10,14 +10,10 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface CarMapper {
 
-    @Mapping(target = "person.id", source = "person.id")
-    @Mapping(target = "person.personalIdentifier", source = "person.personalIdentifier")
-    @Mapping(target = "person.phoneNumbers", source = "person.phoneNumbers")
-    @Mapping(target = "person.drivingLicense", source = "person.drivingLicense")
     @Mapping(ignore = true, target = "id")
     Car carWithPersonDTOToCar(CarDTO car, Person person);
 
-
+    Person personToPerson(Person person);
 
     @Mapping(target = "personalIdentifier", source = "person.personalIdentifier")
     CarDTO carToCarDTO(Car car);

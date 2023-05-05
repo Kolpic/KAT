@@ -3,6 +3,7 @@ package eu.deltasource.kat.service;
 import eu.deltasource.kat.mapstruct.DrivingLicenseMapper;
 import eu.deltasource.kat.model.dto.DrivingLicenseDTO;
 import eu.deltasource.kat.model.entity.DrivingLicense;
+import eu.deltasource.kat.model.entity.Person;
 import eu.deltasource.kat.repository.DrivingLicenseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -58,8 +59,10 @@ public class DrivingLicenseService {
      * @param id the driving license's that we want to delete from database
      */
     public void deleteDrivingLicenseById(long id) {
-        if (drivingLicenseRepository.existsById(id)) {
-           drivingLicenseRepository.deleteById(id);
-        }
+//        if (drivingLicenseRepository.existsById(id)) {
+//           drivingLicenseRepository.deleteById(id);
+//        }
+        Optional<DrivingLicense> optionalDrivingLicense = drivingLicenseRepository.findById(id);
+        optionalDrivingLicense.ifPresent(drivingLicenseRepository::delete);
     }
 }
