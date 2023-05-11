@@ -30,7 +30,7 @@ public class PersonService {
 
     public Person findPersonByPersonalIdentifier(int personalIdentifier) {
         return personRepository
-                .findPersonByPersonalIdentifier(personalIdentifier);
+                .findPersonByPI(personalIdentifier);
     }
 
     public Optional<PersonDTO> getPersonById(long id) {
