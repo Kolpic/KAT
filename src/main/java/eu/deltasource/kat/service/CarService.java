@@ -54,7 +54,7 @@ public class CarService {
     public Car createNewCar(CarDTO newCar) {
         int personalIdentifier = newCar.getPersonalIdentifier();
         Person foundPersonByPI = personRepository.findPersonByPI(personalIdentifier);
-        Car newCarEntity = carMapper.carWithPersonDTOToCar(newCar, foundPersonByPI);
+        Car newCarEntity = carMapper.carDTOWithPersonToCar(newCar, foundPersonByPI);
         return carRepository.saveAndFlush(newCarEntity);
     }
 

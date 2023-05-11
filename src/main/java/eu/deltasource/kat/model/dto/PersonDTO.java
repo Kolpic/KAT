@@ -14,7 +14,7 @@ public class PersonDTO {
 
     private int personalIdentifier;
 
-    @Type(type = "JsonParserConfigurationObject")
+    @Type(type = "JSON")
     private String phoneNumbers;
 
     private long drivingLicenseId;

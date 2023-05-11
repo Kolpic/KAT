@@ -1,9 +1,9 @@
 /**
  * Registering UserType with @TypeDef, so that we apply an annotation to the entire package
- * This links the UserType JsonParserConfiguration to the name “JsonParserConfiguration”
+ * This links the UserType JsonParserConfiguration to the name “JSON”
  * which we can then use with a @Type annotation in the entity mapping.
  */
-@TypeDefs( {@TypeDef( name= "JsonParserConfigurationObject", typeClass = JsonParserConfiguration.class)})
+@TypeDefs( {@TypeDef( name= "JSON", typeClass = JsonParserConfiguration.class)})
 //@org.hibernate.annotations.TypeDef(name = "JsonParserConfigurationObject", typeClass = JsonParserConfiguration.class)
 
 package eu.deltasource.kat;

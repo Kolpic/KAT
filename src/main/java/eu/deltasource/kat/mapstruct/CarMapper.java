@@ -3,7 +3,6 @@ package eu.deltasource.kat.mapstruct;
 import eu.deltasource.kat.model.dto.CarDTO;
 import eu.deltasource.kat.model.entity.Car;
 import eu.deltasource.kat.model.entity.Person;
-import eu.deltasource.kat.service.PersonService;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -11,7 +10,7 @@ import org.mapstruct.Mapping;
 public interface CarMapper {
 
     @Mapping(ignore = true, target = "id")
-    Car carWithPersonDTOToCar(CarDTO car, Person person);
+    Car carDTOWithPersonToCar(CarDTO car, Person person);
 
     Person personToPerson(Person person);
 

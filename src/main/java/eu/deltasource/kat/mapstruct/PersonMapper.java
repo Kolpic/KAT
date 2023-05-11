@@ -9,6 +9,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface PersonMapper {
 
+    @Mapping(target = "drivingLicenseId", source = "id")
     PersonDTO personToPersonDTO(Person person);
 
     @Mapping(ignore = true, target = "id")

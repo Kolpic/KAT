@@ -23,7 +23,7 @@ public class Person {
     private int personalIdentifier;
 
     @Column(name = "numbers")
-    @Type(type = "JsonParserConfigurationObject")
+    @Type(type = "JSON")
     private String phoneNumbers;
 
     @OneToOne

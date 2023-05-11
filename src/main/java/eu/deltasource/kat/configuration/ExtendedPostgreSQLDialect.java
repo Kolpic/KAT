@@ -10,11 +10,10 @@ import java.sql.Types;
  * registerColumnType method in its constructor. We use a PostgreSQL database
  * and we are extending Hibernate’s PostgreSQL94Dialect
  */
-public class MyPostgreSQLDialect extends PostgreSQL94Dialect {
+public class ExtendedPostgreSQLDialect extends PostgreSQL94Dialect {
 
-    public MyPostgreSQLDialect() {
+    public ExtendedPostgreSQLDialect() {
         super();
         this.registerColumnType(Types.JAVA_OBJECT, "json");
-//        this.registerHibernateType(Types.OTHER, "jsonb");
     }
 }
