@@ -1,13 +1,13 @@
 package eu.deltasource.kat.model.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class CarDTO {
 
     private String brand;

@@ -1,14 +1,14 @@
 package eu.deltasource.kat.model.dto;
 
 import eu.deltasource.kat.enums.Sex;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class DrivingLicenseDTO {
 
     private String firstName;
