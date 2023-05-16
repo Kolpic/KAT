@@ -53,8 +53,8 @@ public class CarController {
      * returns status not found
      */
     @PostMapping()
-    public ResponseEntity<Car> createCar(@RequestBody CarDTO newCar) {
-        Car savedCar = carService.createNewCar(newCar);
+    public ResponseEntity<CarDTO> createCar(@RequestBody CarDTO newCar) {
+        CarDTO savedCar = carService.createNewCar(newCar);
         return new ResponseEntity<>(savedCar, HttpStatus.CREATED);
     }
 

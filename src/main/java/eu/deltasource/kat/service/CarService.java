@@ -51,11 +51,19 @@ public class CarService {
      * @param newCar the new object we want to create and save in the database
      * @return the new created new object
      */
-    public Car createNewCar(CarDTO newCar) {
+    public CarDTO createNewCar(CarDTO newCar) {
         int personalIdentifier = newCar.getPersonalIdentifier();
         Person foundPersonByPI = personRepository.findPersonByPI(personalIdentifier);
-        Car newCarEntity = carMapper.carDTOWithPersonToCar(newCar, foundPersonByPI);
-        return carRepository.saveAndFlush(newCarEntity);
+        Optional<Car> optionalCarForPlateNumber = carRepository.findByPlateNumber(newCar.getPlateNumber());
+        Optional<Car> optionalCarForVinNumber = carRepository.findByPlateNumber(newCar.getVinNumber());
+        if (optionalCarForPlateNumber.isPresent() || optionalCarForVinNumber.isPresent()) {
+            throw new RuntimeException();
+        } else {
+            Car newCarEntity = carMapper.carDTOWithPersonToCar(newCar, foundPersonByPI);
+            Car savedCar = carRepository.saveAndFlush(newCarEntity);
+            CarDTO savedCarDTOToReturn = carMapper.carToCarDTO(savedCar);
+            return savedCarDTOToReturn;
+        }
     }
 
     /**
